@@ -1,0 +1,3 @@
+ID, AnimalID, BodyPart, Case Description, Clinical Findings, Treatment and Outcome, Clinical Relevance
+
+

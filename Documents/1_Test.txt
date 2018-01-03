@@ -1,0 +1,64 @@
+Parent Child Hierarchy
+
+With MyOrg as
+(
+  select E.Id,E.Name, E.MaleId         
+  from ParentChildHierarchy as E
+  where E.Id = 8
+  union all
+  select E.Id, E.Name,E.MaleId 
+  from ParentChildHierarchy as E
+    inner join MyOrg on E.Id = MyOrg.MaleId
+)
+select MyOrg.Id,MyOrg.Name, MyOrg.MaleId from MyOrg 
+Union all
+Select E.Id, E.Name, E.MaleId
+From ParentChildHierarchy E where E.MaleId = 5 and E.Id != 8 
+Order by MaleId
+
+
+With MyOrg as
+(
+  select FP.Id,FP.Name, FP.FemaleId as Parent        
+  from ParentChildHierarchy as FP
+  where FP.Id = 8
+  union all
+  select PCH.Id, PCH.Name,PCH.FemaleId 
+  from ParentChildHierarchy as PCH
+    inner join MyOrg on PCH.Id = MyOrg.Parent
+)
+select MyOrg.Id,MyOrg.Name, MyOrg.Parent from MyOrg 
+Union all
+Select E.Id, E.Name, E.FemaleId
+From ParentChildHierarchy E where E.FemaleId = 5 and E.Id != 8 
+Order by Parent
+
+
+
+
+
+//////////// WIP
+
+(select MP.Id, MP.Name, MP.MaleId as parent from ParentChildHierarchy MP
+union all
+select FP.Id, FP.Name, FP.FemaleId as parent from ParentChildHierarchy FP) 
+
+With MyOrg as
+(
+  select MP.Id,MP.Name, MP.MaleId as Parent    
+  from ParentChildHierarchy as MP
+  where MP.Id = 8
+  union all
+  select PCH.Id, PCH.Name,PCH.MaleId 
+  from ParentChildHierarchy as PCH
+    inner join MyOrg on PCH.Id = MyOrg.Parent
+)
+select MyOrg.Id,MyOrg.Name, MyOrg.Parent from MyOrg 
+Union all
+Select E.Id, E.Name, E.MaleId
+From ParentChildHierarchy E where E.MaleId = 5 and E.Id != 8
+Union all
+Select F.Id, F.Name, F.FemaleId
+From ParentChildHierarchy F where F.FemaleId = 2 and F.Id != 8 
+Order by Parent
+

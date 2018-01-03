@@ -1,0 +1,76 @@
+﻿
+.content-area {
+    background-color: rgba(247,247,247,0.45);
+    margin: auto;
+    width: 40%;
+}
+.validationtxt2 {
+    background-color: #ce5454;
+    border-radius: 3px 4px 4px 3px;
+    color : #FFFFFF;
+    padding: 3px 10px;
+    font-size : 12px;
+}
+.tab-footer {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+.validationtxt
+{
+    color:#CE5454;
+}
+.large-textarea{
+    width : 350px;
+}
+#Grid thead tr td{
+    border-bottom: 2px solid #ddd;
+    vertical-align: bottom;
+    font-weight : bold;
+}
+
+#Grid thead tr td a{
+    color : inherit;  
+}
+#CamelTab > li a.active {
+    border-right: 6px solid #d3d6da;
+    border-top: 0 none;
+    background-color : #1ABB9C;
+    color : #FFFFFF;
+}
+.title-header{
+    color: #1a82c3;
+    font-size : 18px;
+    font-weight : bold;
+}
+.mainheadtxt2{
+    font-weight:bold;
+}
+.scroll-div {
+     overflow-y:auto;
+     border: 1px solid #e6e9ed;
+     padding-left : 3px;
+     width : 260px;
+     height : 70px;
+}
+.headings td{
+    background-color : #405467;
+    color : #ecf0f1;
+}
+.headings td:hover{
+    background-color : #405467;
+    color : #ecf0f1;
+}
+.ui-progressbar {
+  height: 2em;
+  text-align: left;
+  overflow: hidden;
+}
+.ui-progressbar .ui-progressbar-value {
+  margin: -1px;
+  height: 100%;
+  background-color: #ccc;
+}
+a {
+    font-weight : bold;
+}
